@@ -2,8 +2,9 @@
 
 # Udacity: Intro to Machine Learning
 
-Link: [Intro to Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120)
+**Course Link:** [Intro to Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120)
 
+**GitHub:** [https://github.com/udacity/ud120-projects](https://github.com/udacity/ud120-projects)
 
 ## Lesson #2: Naive Bayes
 
@@ -48,9 +49,9 @@ correctly divided by the total number of test points.
 from sklearn.naive_bayes import GaussianNB
 clf = GaussianNB()
 clf.fit(features_train, labels_train)
-pred = clf.predict(features_train)
+pred = clf.predict(features_test)
 
-import sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score
 print accuracy_score(pred, labels_test)
 ```
 - Another way to check accuracy you can do:
@@ -58,3 +59,22 @@ print accuracy_score(pred, labels_test)
 ```py
 print clf.score(features_test, labels_test)
 ```
+
+- remember, you must have separate testing and training data. They recommend
+saving about 10% of your data for testing so that you can check the accuracy, 
+more accurately. If not, you could over-fit your data and feel more comfortable
+about your accuracy than you should
+  - [Wikipedia: Overfitting](https://en.wikipedia.org/wiki/Overfitting)
+
+> the production of an analysis that corresponds too closely or exactly to a 
+> particular set of data, and may therefore fail to fit additional data or predict 
+> future observations reliably
+
+### 27: Bayes
+
+- Prior Probability * Test Evidence => Posterior Probability
+
+![Bayes Formula](./assets/bayes.png)
+
+
+
